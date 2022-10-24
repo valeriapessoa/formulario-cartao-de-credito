@@ -90,7 +90,7 @@ cardHolder.addEventListener("input", () => {
   ccholder.innerText = cardHolder.value.length === 0 ? "FULANO DA SILVA" : cardHolder.value
 })
 
-securityCodeMasked.on("accept", () => {       //on é como se fosse o addEventListener(), quando for aceito (accept) vai executar a função
+securityCodeMasked.on("accept", () => {       // on é como se fosse o addEventListener(), quando for aceito (accept) vai executar a função
   updateSecurityCode(securityCodeMasked.value)
 })
 
