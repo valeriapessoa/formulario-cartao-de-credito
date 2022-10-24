@@ -37,8 +37,8 @@ const expirationDatePattern = {
     },
     YY: {
       mask: IMask.MaskedRange,
-      from: String(new Date().getFullYear()).slice(2), //Transforma em String o ano atual com 2 digitos
-      to: String(new Date().getFullYear() + 10).slice(2), // Ano atual + 10 anos com 2 digitos
+      from: String(new Date().getFullYear()).slice(2),      // Transforma em String o ano atual com 2 digitos
+      to: String(new Date().getFullYear() + 10).slice(2),   // Ano atual + 10 anos com 2 digitos
     }
   },
 }
@@ -63,7 +63,7 @@ const cardNumberPattern = {
     },
   ],
   dispatch: function (appended, dynamicMasked) {
-    const number = (dynamicMasked.value + appended).replace(/\D/g,"");    //Tudo que não for número (digito) vai ficar vazio (não aceita letra)
+    const number = (dynamicMasked.value + appended).replace(/\D/g,"");         // Tudo que não for número (digito) vai ficar vazio (não aceita letra)
     const foundMask = dynamicMasked.compiledMasks.find(function (item) {       // find significa encontre
       return number.match(item.regex)
     })
@@ -80,7 +80,7 @@ addButton.addEventListener("click", () => {
 })
 
 document.querySelector("form").addEventListener("submit", (event) => {
-  event.preventDefault()
+  event.preventDefault()     // Serve para prevenir o comportamento padrão de um evento, evita de ficar recarregando (atualizando) a página
 })
 
 const cardHolder = document.querySelector("#card-holder")
